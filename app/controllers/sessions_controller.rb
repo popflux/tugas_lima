@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
 
       if !user_password.blank? and user.password_hash.eql? user_password
         session[:user] = user.id
-        flash[:notice] = "Welcome #{user.username}"
+        flash[:notice] = "Welcome #{user.username.upcase}"
 
         redirect_to root_url
 

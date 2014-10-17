@@ -1,25 +1,9 @@
-<h4>
-
-  <% if !current_user %>
-
-    <%= link_to 'Log-in', new_session_path %>
-
-  <% else %>
-
-    Hello <%= current_user.username %>
-
-    <%= link_to 'Log-Out', session_path(current_user.id), method: "DELETE" %>
-
-  <% end %>
-
-</h4>
-
 <div class="digg_pagination">
     <div class="page_info">
       <%= page_entries_info @articles %>
     </div>
-    <%= will_paginate @articles, :container => false %>
-  </div>
+    <%= will_paginate @articles, :container => false, previous_label: h("<"), next_label: h(">") %>
+</div>
 
 <% @articles.each do |article| %>
 
@@ -27,7 +11,7 @@
 
   <p>
 
-    <%= article.content.truncate(20) %>
+    <%= article.content.truncate(200) %>
 
     <%= link_to 'read more', article_path(article.id) %>
 

@@ -4,7 +4,13 @@ gem 'will_paginate', '~> 3.0.7'
 
 gem 'bcrypt-ruby', require: 'bcrypt'
 
-gem 'humanizer'  
+gem 'humanizer'
+
+gem 'therubyracer'
+
+gem 'less-rails'
+
+gem 'twitter-bootstrap-rails'  
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
