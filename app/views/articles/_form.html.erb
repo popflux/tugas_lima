@@ -1,22 +1,20 @@
-<%= form_for @comment, url: comments_path, remote: true do |f| %>
+<%= form_for @article, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :title, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :title, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :content, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :content, :class => 'text_area', rows: 5 %>
+    </div>
+  </div>
 
-  <%= f.hidden_field :article_id, value: @article.id %>
-
-  <% if current_user %>
-
-    <%= f.hidden_field :user_id, value: current_user.id %>
-
-  <% end %>
-
-  <br/>
-
-  <%= f.label :content %>
-
-  <%= f.text_area :content, cols: 20, rows: 10 %>
-
-  <br/>
-
-  <%= f.submit :submit %>
-
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                articles_path, :class => 'btn' %>
+  </div>
 <% end %>
-

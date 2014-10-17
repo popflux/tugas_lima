@@ -1,36 +1,5 @@
-<%= form_for @article do |f| %>
-
-  <%= f.label :title %>
-
-  <%= f.text_field :title %>
-
-<br/>
-
-  <%= f.label :content %>
-
-  <%= f.text_area :content, cols: 20, rows: 10 %>
-
-<br/>
-
-  <%= f.label :status %>
-
-  <%= f.radio_button :status, "active" %>
-
-  <%= label :article_status, 'active' %>
-
-  <%= f.radio_button :status, "off" %>
-
-  <%= label :article_status, 'off' %>
-
-<br/>
-
-  <%= f.submit :submit %>
-
-<% end %>
-
-
-<div>
-
-  <%= link_to "back to index", articles_path %>
-
+<%- model_class = Article -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize %></h1>
 </div>
+<%= render :partial => 'form' %>
