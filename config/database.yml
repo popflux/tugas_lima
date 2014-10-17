@@ -1,0 +1,16 @@
+
+development:
+  adapter: postgresql
+  encoding: utf8
+  database: tugas_lima_fix_development
+  pool: 5
+  username: postgres
+  password: molkomolko
+
+test:
+  adapter: postgresql
+  encoding: utf8
+  database: tugas_lima_fix_test
+  pool: 5
+  username: postgres
+  password: molkomolko
