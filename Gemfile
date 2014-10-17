@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'will_paginate', '~> 3.0.7'
+
 gem 'bcrypt-ruby', require: 'bcrypt'
 
 gem 'humanizer'  
